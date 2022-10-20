@@ -53,7 +53,7 @@ html(lang='en')
   body
 
     //- Header area
-    
+
     header#_header
       nav
         a._nav-logo-container(href='#')
@@ -67,13 +67,15 @@ html(lang='en')
               a(href='#_features') Features
             li._nav-item
               a(href='#_contact') Contact
+            li._nav-item
+              a(href=`https://docs.${textCase.lowerCase(_PROJECT)}`) Docs
           div._nav-buttons
             button#_theme_switch_button(type='button')
               i#_dark_theme_icon(class='inline fas fa-moon')
               i#_light_theme_icon(class='hidden fas fa-sun')
 
     //- Hero area
-    
+
     section#_hero-section._border
       div._section-inner
         h1._hero-title.wow.fadeInUp(data-wow-delay="0.3s")!= md(_BODY.hero.title)
@@ -131,9 +133,9 @@ html(lang='en')
                     each subitem in item.description
                       p!= md(subitem.item)
                     a(class='inline-block mt-5 text-xl' href=item.link_url) Visit #{item.link_text} #[span(class='fas fa-arrow-right')]
-    
+
     //- Features section #[span(class='fas fa-arrow-right')]
-    
+
     section#_features._bg-alternate._border
       div._section-inner
         h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Features
@@ -145,7 +147,7 @@ html(lang='en')
               p!= md(item.description)
 
     //- Contact section
-    
+
     section#_contact
       div._section-inner
         h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Get in touch
@@ -178,7 +180,7 @@ html(lang='en')
             div._grecaptcha-branding!= md(`This site is protected by reCAPTCHA and the Google [Privacy Policy](https://policies.google.com/privacy) and [Terms of Service](https://policies.google.com/terms) apply.`)
 
     //- Footer section
-    
+
     section
       div(class='relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto')
         div._footer-hline
@@ -203,13 +205,13 @@ html(lang='en')
               span!= md(`Designed by [Andrew Sazonov](https://sazonov.org)`)
 
     //- Loading screen
-    
+
     div#_loading-screen.block
       span(class='relative top-1/2 mx-auto flex items-center justify-center')
         img(class='h-20 w-20 animate-bounce' src='assets/img/logo.svg' alt='')
 
     //- Scripts
-    
+
     script(src='js/wow.min.js')
     script(src='js/contact.js')
     script(src='js/main.js')
