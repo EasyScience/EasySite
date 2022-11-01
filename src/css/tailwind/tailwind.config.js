@@ -7,7 +7,7 @@ module.exports = {
     preserveHtmlElements: false,
     content: ['./src/*.pug'],
     options: {
-      safelist: ["dark"],
+      safelist: ['dark'],
     },
   },
   darkMode: 'class',
