@@ -136,11 +136,11 @@ nav {
 }
 
 ._hero-download-buttons {
-  @apply flex flex-wrap space-y-4 md:space-y-0 md:space-x-4 mt-5 md:mt-8 xl:mt-10;
+  @apply flex flex-wrap gap-4 mt-5 md:mt-8 xl:mt-10;
 }
 
 ._hero-download-button {
-  @apply w-full md:w-56 bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 leading-6 py-2 sm:px-6 border border-gray-300 dark:border-black rounded-xl flex items-center justify-center space-x-3 focus:outline-none transition-colors duration-500;
+  @apply w-full md:w-64 bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 leading-6 py-2 sm:px-6 border border-gray-300 dark:border-black rounded-xl flex items-center justify-center space-x-3 focus:outline-none transition-colors duration-500;
 }
 
 ._hero-image-container {
