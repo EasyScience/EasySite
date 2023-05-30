@@ -143,15 +143,18 @@ html(lang='en')
 
     //- Features section #[span(class='fas fa-arrow-right')]
 
-    section#features._bg-alternate._border
-      div._section-inner
-        h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Features
-        div(class='flex flex-wrap sm:mt-5')
-          each item, index in _BODY.features
-            div._feature-container(class=(index % 2) ? "wow fadeInRight" : "wow fadeInLeft" data-wow-delay="0.4s")
-              i(class=item.icon)
-              h3!= md(item.title)
-              p!= md(item.description)
+    if _BODY.main_features
+      section#features._border
+    else
+      section#features._bg-alternate._border
+        div._section-inner
+          h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Features
+          div(class='flex flex-wrap sm:mt-5')
+            each item, index in _BODY.features
+              div._feature-container(class=(index % 2) ? "wow fadeInRight" : "wow fadeInLeft" data-wow-delay="0.4s")
+                i(class=item.icon)
+                h3!= md(item.title)
+                p!= md(item.description)
 
     //- Documentation section
 
