@@ -110,6 +110,7 @@ html(lang='en')
                 i(class='ml-2 fas fa-play')
 
     //- Main features section
+    
     if _BODY.main_features
       section._border
         div._section-inner
@@ -151,15 +152,16 @@ html(lang='en')
 
     //- Documentation section
 
-    section#docs._border
-      div._section-inner
-        h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Documentation
-        div(class='flex flex-wrap sm:mt-5')
-          each item, index in _BODY.documentation
-            div._feature-container(class=(index % 2) ? "wow fadeInRight" : "wow fadeInLeft" data-wow-delay="0.4s")
-              i(class=item.icon)
-              h3!= md(item.title)
-              p!= md(item.description)
+    if _BODY.documentation
+      section#docs._border
+        div._section-inner
+          h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Documentation
+          div(class='flex flex-wrap sm:mt-5')
+            each item, index in _BODY.documentation
+              div._feature-container(class=(index % 2) ? "wow fadeInRight" : "wow fadeInLeft" data-wow-delay="0.4s")
+                i(class=item.icon)
+                h3!= md(item.title)
+                p!= md(item.description)
 
     //- Contact section
 
