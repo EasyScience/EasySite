@@ -186,7 +186,7 @@ nav {
 /* Downloads section */
 
 ._release-version {
-  @apply text-lg sm:text-2xl text-left text-gray-500 dark:text-gray-400 sm:mt-5;
+  @apply font-semibold mt-5 text-gray-800 dark:text-gray-200 text-xl sm:text-2xl;
 }
 
 ._download-section {
@@ -194,17 +194,16 @@ nav {
 }
 
 ._download-item-container {
-  @apply w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mt-12 pr-12;
+  @apply w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mt-10 pr-12;
 }
 
 ._download-item-container p {
-  @apply leading-8 mt-3 text-gray-600 dark:text-gray-400 text-xl;
+  @apply leading-8 text-gray-600 dark:text-gray-400 text-lg sm:text-xl;
 }
 
 ._download-button {
   @apply w-full md:w-80 xl:w-96 bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 leading-6 py-2 sm:px-6 border border-gray-300 dark:border-black rounded-xl flex items-center justify-center space-x-3 focus:outline-none transition-colors duration-500;
 }
-
 
 /* Contact section */
 
