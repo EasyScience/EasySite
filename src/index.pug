@@ -10,6 +10,7 @@
 - const _META = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/meta.yaml`, 'utf-8'))
 - const _BODY = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/home.yaml`, 'utf-8'))
 - const _FOOTER = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/footer.yaml`, 'utf-8'))
+- const _RELEASE = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/release.yaml`, 'utf-8'))
 //- const _CONFIG = toml.parse(fs.readFileSync(`../${_PROJECT}App/pyproject.toml`, 'utf-8'))
 
 - const md = function(s) { return marked(s).replace(/(^<p>|<\/p>$)/mg, '').trim() }
@@ -71,6 +72,8 @@ html(lang='en')
               li._nav-item
                 a(href='#docs') Docs
             li._nav-item
+              a(href='#download') Download
+            li._nav-item
               a(href='#contact') Contact
           div._nav-buttons
             button#_theme_switch_button(type='button')
@@ -85,22 +88,6 @@ html(lang='en')
         p._hero-description.wow.fadeInUp(data-wow-delay="0.4s")!= md(_BODY.hero.description)
         if _BODY.hero.description_extra
           p._hero-description-extra.wow.fadeInUp(data-wow-delay="0.4s")!= md(_BODY.hero.description_extra)
-        if _BODY.hero.downloads
-          div._hero-version.wow.fadeInUp(data-wow-delay="0.5s")
-            p= `Version ${_BODY.hero.release.version} (${dateFormat(_BODY.hero.release.date, "d mmm yyyy")})`
-          div._hero-download-buttons.wow.fadeInUp(data-wow-delay="0.6s")
-            each item in _BODY.hero.downloads
-              a._hero-download-button(href=replaceall('$RELEASE_VERSION', _BODY.hero.release.version, item.url))
-                i(class='text-3xl' class=item.icon)
-                div(class='align-middle text-left')
-                  div(class='text-lg')= item.top
-                  div(class='text-3xl -mt-2 font-bold')= item.bottom
-                  if item.details
-                    div(class='text-sm -mt-1 opacity-25')= item.details
-
-        if _BODY.hero.source
-          div._hero-version.wow.fadeInUp(data-wow-delay="0.6s")
-            p!= md(`You can also [build it from source](${_BODY.hero.source}).`)
         if _BODY.hero.poster
           div._hero-image-container
             div.wow.fadeInLeft(class='absolute left-0 right-0 hidden md:block h-5/6 -mx-6 bg-gray-200 dark:bg-gray-600 rounded-3xl shadow-lg' data-wow-delay="1.1s")
@@ -180,9 +167,26 @@ html(lang='en')
                 h3!= md(item.title)
                 p!= md(item.description)
 
+    //- Download section
+
+    section#download._bg-alternate._border
+      div._section-inner
+        h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Download
+        div._release-version.wow.fadeInUp(data-wow-delay="0.4s")
+          p= `Version ${_RELEASE.release.version} (${dateFormat(_RELEASE.release.date, "d mmm yyyy")})`
+        div._download-section.wow.fadeInUp(data-wow-delay="0.5s")
+          each item, index in _BODY.download
+            div._download-item-container(class=(index % 2) ? "wow fadeInRight" : "wow fadeInLeft" data-wow-delay="0.6s")
+              p!= md(item.details)
+              a._download-button(href=replaceall('$RELEASE_VERSION', _RELEASE.release.version, item.url))
+                i(class='text-3xl' class=item.icon)
+                div(class='align-middle text-left')
+                  div(class='text-lg')= item.top
+                  div(class='text-3xl -mt-2 font-bold')= item.bottom
+
     //- Contact section
 
-    section#contact._bg-alternate
+    section#contact
       div._section-inner
         h2._section-title.wow.fadeInUp(data-wow-delay="0.3s") Get in touch
         //- Main part
@@ -215,7 +219,7 @@ html(lang='en')
 
     //- Footer section
 
-    section._bg-alternate
+    section
       div(class='relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto')
         div._footer-hline
         footer
