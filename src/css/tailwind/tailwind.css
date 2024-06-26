@@ -186,7 +186,7 @@ nav {
 /* Downloads section */
 
 ._release-version {
-  @apply font-semibold mt-5 text-gray-800 dark:text-gray-200 text-xl sm:text-2xl;
+  @apply font-semibold mt-5 text-gray-800 dark:text-gray-200 text-lg sm:text-2xl;
 }
 
 ._download-section {
