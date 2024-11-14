@@ -210,7 +210,7 @@ nav {
 }
 
 ._install_cmd {
-  @apply w-min font-light bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-300 text-lg sm:text-xl border border-gray-300 dark:border-black mt-10 py-4 px-8 transition-colors duration-500;
+  @apply w-min font-light bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-300 text-base sm:text-xl border border-gray-300 dark:border-black mt-10 py-4 px-8 transition-colors duration-500;
 }
 
 /* Contact section */
