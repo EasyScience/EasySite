@@ -186,14 +186,15 @@ html(lang='en')
                 div(class='align-middle text-left')
                   div(class='text-lg')= item.top
                   div(class='text-3xl -mt-2 font-bold')= item.bottom
-        if _BODY.install.pip
-          p &nbsp;
-          h3._section-sub-title.wow.fadeInUp(data-wow-delay="0.6s") Python package
-          div._release-version.wow.fadeInUp(data-wow-delay="0.6s")
-            div
-              i(class='fa-solid fa-rocket')
-              p(class='inline')= ` Latest release: v${_RELEASE.release.lib.version} (${dateFormat(_RELEASE.release.lib.date, "d mmm yyyy")})`
-              pre._install_cmd= `$ ${_BODY.install.pip}`
+        if _BODY.install
+          if _BODY.install.pip
+            p &nbsp;
+            h3._section-sub-title.wow.fadeInUp(data-wow-delay="0.6s") Python package
+            div._release-version.wow.fadeInUp(data-wow-delay="0.6s")
+              div
+                i(class='fa-solid fa-rocket')
+                p(class='inline')= ` Latest release: v${_RELEASE.release.lib.version} (${dateFormat(_RELEASE.release.lib.date, "d mmm yyyy")})`
+                pre._install_cmd= `$ ${_BODY.install.pip}`
 
     //- Contact section
 
