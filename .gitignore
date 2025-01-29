@@ -9,6 +9,7 @@ _pgbackup
 node_modules/
 
 # misc
+.idea/
 public/
 src/copy/assets
 src/css/tailwind/style.css

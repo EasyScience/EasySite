@@ -7,11 +7,11 @@
 - const replaceall = require('replaceall')
 
 - const _PROJECT = require('../project.json').project
-- const _META = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/meta.yaml`, 'utf-8'))
-- const _BODY = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/home.yaml`, 'utf-8'))
-- const _FOOTER = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/footer.yaml`, 'utf-8'))
-- const _RELEASE = yaml.load(fs.readFileSync(`../${_PROJECT}Www/content/release.yaml`, 'utf-8'))
-//- const _CONFIG = toml.parse(fs.readFileSync(`../${_PROJECT}App/pyproject.toml`, 'utf-8'))
+- const _META = yaml.load(fs.readFileSync(`../${_PROJECT}/content/meta.yaml`, 'utf-8'))
+- const _BODY = yaml.load(fs.readFileSync(`../${_PROJECT}/content/home.yaml`, 'utf-8'))
+- const _FOOTER = yaml.load(fs.readFileSync(`../${_PROJECT}/content/footer.yaml`, 'utf-8'))
+- const _RELEASE = yaml.load(fs.readFileSync(`../${_PROJECT}/content/release.yaml`, 'utf-8'))
+//- const _CONFIG = toml.parse(fs.readFileSync(`../${_PROJECT}-app/pyproject.toml`, 'utf-8'))
 
 - const md = function(s) { return marked(s).replace(/(^<p>|<\/p>$)/mg, '').trim() }
 
